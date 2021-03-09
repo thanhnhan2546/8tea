@@ -4,5 +4,6 @@
 
 ## Công cụ hỗ trợ quá trình phát triển
 
-- Quản lý công việc: [Trello](https://trello.com/b/SDi8PtxN/8tea)
-- Giao tiếp: [Slack](https://app.slack.com/client/T01QKRLQBMX/apps)
+- Quản lý công việc: [Bảng 8Tea trên Trello](https://trello.com/b/SDi8PtxN/8tea)
+- Giao tiếp: [Nhóm 8Tea DevTem trên Slack](https://app.slack.com/client/T01QKRLQBMX/apps)
+- Báo cáo dự án: [Thư mục Báo cáo dự án trên Google Drive](https://drive.google.com/drive/folders/1jm099qc-zZJWQW8xbXp9N0SXnX23a83Y)

@@ -1,7 +1,8 @@
-Feature: Is it Friday yet?
-  Everybody wants to know when it's Friday
+# language: vi
+Tính năng: Hôm nay có phải thứ sáu hay không?
+  Mọi người muốn biết khi nào là thứ sáu
 
-  Scenario: Sunday isn't Friday
-    Given today is Sunday
-    When I ask whether it's Friday yet
-    Then I should be told "Nope"
+  Kịch bản: Chủ nhật không phải là thứ sáu
+    Biết Hôm nay là chủ nhật
+    Khi Tôi hỏi hôm nay có phải thứ 6 không
+    Thì Tôi được trả lời là "Không"

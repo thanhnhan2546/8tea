@@ -29,7 +29,7 @@
         </property>
 
         <!-- List of Entity classes -->
-        <mapping class = "com.github.qquang24t5._8tea.dtos.Employee"/>
+        <mapping class = "com.github.qquang24t5._8tea.transference.Employee"/>
 
     </session-factory>
 </hibernate-configuration>

@@ -1,7 +1,7 @@
 package com.github.qquang24t5._8tea;
 
-import com.github.qquang24t5._8tea.dtos.Employee;
-import com.github.qquang24t5._8tea.models.Database;
+import com.github.qquang24t5._8tea.transference.Employee;
+import com.github.qquang24t5._8tea.persistence.Database;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

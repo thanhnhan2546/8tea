@@ -1,4 +1,4 @@
-package com.github.qquang24t5._8tea.dtos;
+package com.github.qquang24t5._8tea.transference;
 
 import com.sun.istack.NotNull;
 

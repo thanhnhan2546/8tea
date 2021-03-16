@@ -1,4 +1,4 @@
-package com.github.qquang24t5._8tea.models;
+package com.github.qquang24t5._8tea.persistence;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

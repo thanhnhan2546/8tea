@@ -1,7 +1,7 @@
 package com.github.qquang24t5._8tea;
 
-import com.github.qquang24t5._8tea.dtos.Employee;
-import com.github.qquang24t5._8tea.models.Database;
+import com.github.qquang24t5._8tea.transference.Employee;
+import com.github.qquang24t5._8tea.persistence.Database;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -36,35 +36,6 @@ public class EightTeaApplication extends Application {
     }
 
     public static void main(String[] args) {
-
-        // Đoạn code dưới là để thử xem liệu Hibernate đã được tích hợp thành công hay chưa
-
-        Employee exampleEmployee = new Employee()
-                .setPhoneNumber("0123456789")
-                .setPassword("This1sAVery5trongPasword!")
-                .setPasswordHashed(false)
-                .setFirstName("Quang")
-                .setLastName("Pham")
-                .setMale(true);
-
-        Database db = Database.getInstance();
-        Session session = db.getSessionFactory().openSession();
-
-        Transaction transaction = session.beginTransaction();
-        session.save(exampleEmployee);
-        transaction.commit();
-
-        transaction = session.beginTransaction();
-        var employees = session.createQuery("FROM Employee").list();
-        for (Object o : employees) {
-            Employee employee = (Employee) o;
-            System.out.println(employee);
-        }
-        transaction.commit();
-
-        session.close();
-
-        // Kết thúc phần code thử Hibernate
 
         launch();
 

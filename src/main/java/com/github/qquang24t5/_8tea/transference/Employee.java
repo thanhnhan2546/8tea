@@ -14,44 +14,27 @@ public class Employee {
 
     @NotNull
     @Column(unique = true, nullable = false)
-    private String phoneNumber;
+    private String mobile;
 
     @NotNull
     @Column(unique = true, nullable = false)
     private String password;
 
-    @NotNull
-    @Column(nullable = false)
-    private Boolean passwordHashed;
-
-    private String firstName;
-
-    private String lastName;
+    private String name;
 
     private LocalDate dateOfBirth;
 
-    private Boolean male;
+    enum Gender { MALE, FEMALE }
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
 
     public Employee() {
         id = null;
-        phoneNumber = null;
+        mobile = null;
         password = null;
-        passwordHashed = null;
-        firstName = null;
-        lastName = null;
-        male = null;
-    }
-
-    public Employee(Integer id, String phoneNumber, String password, Boolean passwordHashed, String firstName,
-                    String lastName, LocalDate dateOfBirth, Boolean male) {
-        this.id = id;
-        this.phoneNumber = phoneNumber;
-        this.password = password;
-        this.passwordHashed = passwordHashed;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.dateOfBirth = dateOfBirth;
-        this.male = male;
+        name = null;
+        dateOfBirth = null;
+        gender = null;
     }
 
     public Integer getId() {
@@ -63,12 +46,12 @@ public class Employee {
         return this;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getMobile() {
+        return mobile;
     }
 
-    public Employee setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public Employee setMobile(String mobile) {
+        this.mobile = mobile;
         return this;
     }
 
@@ -81,30 +64,12 @@ public class Employee {
         return this;
     }
 
-    public Boolean getPasswordHashed() {
-        return passwordHashed;
+    public String getName() {
+        return name;
     }
 
-    public Employee setPasswordHashed(Boolean passwordHashed) {
-        this.passwordHashed = passwordHashed;
-        return this;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public Employee setFirstName(String firstName) {
-        this.firstName = firstName;
-        return this;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public Employee setLastName(String lastName) {
-        this.lastName = lastName;
+    public Employee setName(String name) {
+        this.name = name;
         return this;
     }
 
@@ -117,12 +82,12 @@ public class Employee {
         return this;
     }
 
-    public Boolean getMale() {
-        return male;
+    public Gender getGender() {
+        return gender;
     }
 
-    public Employee setMale(Boolean male) {
-        this.male = male;
+    public Employee setGender(Gender gender) {
+        this.gender = gender;
         return this;
     }
 
@@ -130,13 +95,11 @@ public class Employee {
     public String toString() {
         return "Employee{" +
                 "id=" + id +
-                ", phoneNumber='" + phoneNumber + '\'' +
+                ", mobile='" + mobile + '\'' +
                 ", password='" + password + '\'' +
-                ", passwordHashed=" + passwordHashed +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
+                ", name='" + name + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
-                ", male=" + male +
+                ", gender=" + gender +
                 '}';
     }
 }

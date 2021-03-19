@@ -8,12 +8,12 @@ Tính năng: Tạo tài khoản mới
   Kịch bản: tạo tài khoản mới thành công
     Biết tài khoản với số điện thoại "0777888999" không tồn tại trong hệ thống
     Khi người dùng tạo tài khoản mới với số điện thoại "0777888999", mật khẩu "111!StrongPassword!999"
-    Thì người dùng được thông báo rằng tạo tài khoản mới thành công
+    Thì người dùng được thông báo rằng "tạo tài khoản mới thành công"
 
   Khung kịch bản: tạo tài khoản mới bằng số điện thoại không hợp lệ hoặc đã tồn tại trong hệ thống
     Biết tài khoản với số điện thoại "0123456789" đã tồn tại trong hệ thống
     Khi người dùng tạo tài khoản mới với số điện thoại "<phoneNumber>"
-    Thì người dùng được thông báo rằng <result>
+    Thì người dùng được thông báo rằng "<result>"
 
   Dữ liệu:
     | phoneNumber     | result                                  |
@@ -23,7 +23,7 @@ Tính năng: Tạo tài khoản mới
 
   Khung kịch bản: tạo tài khoản mới với mật khẩu yếu
     Khi người dùng tạo tài khoản mới với mật khẩu "<password>"
-    Thì người dùng được thông báo rằng <result>
+    Thì người dùng được thông báo rằng "<result>"
 
   Dữ liệu:
     | password   | result                                        |

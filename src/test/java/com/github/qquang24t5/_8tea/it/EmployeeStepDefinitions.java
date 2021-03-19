@@ -18,39 +18,37 @@ public class EmployeeStepDefinitions {
 
     @Biết("tài khoản với số điện thoại {string} đã tồn tại trong hệ thống")
     public void tài_khoản_với_số_điện_thoại_đã_tồn_tại_trong_hệ_thống(String string) {
-        if (employeeDatastore.findByPhoneNumber(string) == null) {
-            Employee e = new Employee()
-                    .setPhoneNumber(string);
-            EmployeeDatastore.autofill(e);
-            employeeDatastore.create(e);
-        }
-
-        assertThat(employeeDatastore.findByPhoneNumber(string)).isNotNull();
+        throw new UnsupportedOperationException();
     }
 
     @Biết("tài khoản với số điện thoại {string} không tồn tại trong hệ thống")
     public void tài_khoản_với_số_điện_thoại_không_tồn_tại_trong_hệ_thống(String string) {
-        Employee e = employeeDatastore.findByPhoneNumber(string);
-        if (e != null) {
-            employeeDatastore.forceDelete(e);
-        }
-
-        assertThat(employeeDatastore.findByPhoneNumber(string)).isNull();
+        throw new UnsupportedOperationException();
     }
 
     @Khi("người dùng tạo tài khoản mới với mật khẩu {string}")
-    public void người_dùng_tạo_tài_khoản_mới_với_mật_khẩu(String string) {}
+    public void người_dùng_tạo_tài_khoản_mới_với_mật_khẩu(String string) {
+        throw new UnsupportedOperationException();
+    }
 
     @Khi("người dùng tạo tài khoản mới với số điện thoại {string}")
-    public void người_dùng_tạo_tài_khoản_mới_với_số_điện_thoại(String string) {}
+    public void người_dùng_tạo_tài_khoản_mới_với_số_điện_thoại(String string) {
+        throw new UnsupportedOperationException();
+    }
 
     @Khi("người dùng tạo tài khoản mới với số điện thoại {string}, mật khẩu {string}")
-    public void người_dùng_tạo_tài_khoản_mới_với_số_điện_thoại_mật_khẩu(String string, String string2) {}
+    public void người_dùng_tạo_tài_khoản_mới_với_số_điện_thoại_mật_khẩu(String string, String string2) {
+        throw new UnsupportedOperationException();
+    }
 
     @Thì("người dùng được thông báo rằng số điện thoại đã tồn tại trong hệ thống")
-    public void người_dùng_được_thông_báo_rằng_số_điện_thoại_đã_tồn_tại_trong_hệ_thống() {}
+    public void người_dùng_được_thông_báo_rằng_số_điện_thoại_đã_tồn_tại_trong_hệ_thống() {
+        throw new UnsupportedOperationException();
+    }
 
     @Thì("người dùng được thông báo rằng {string}")
-    public void người_dùng_được_thông_báo_rằng(String string) {}
+    public void người_dùng_được_thông_báo_rằng(String string) {
+        throw new UnsupportedOperationException();
+    }
 
 }

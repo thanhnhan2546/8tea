@@ -16,7 +16,7 @@ import java.util.logging.Logger;
  *
  * @author MINH TUAN
  */
-public class PermDataStorage {
+public class PermissionDataStorage {
     JDBCConnection conn = new JDBCConnection();
     public void create(Permission pe)
     {
@@ -27,7 +27,7 @@ public class PermDataStorage {
             st.setString(2,pe.getName());
             st.executeUpdate();
         } catch (SQLException ex) {
-            Logger.getLogger(EmpDataStorage.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EmployeeDataStorage.class.getName()).log(Level.SEVERE, null, ex);
         }
             
                 
@@ -40,7 +40,7 @@ public class PermDataStorage {
             st.setString(1, ID);
             st.executeUpdate();
         } catch (SQLException ex) {
-            Logger.getLogger(EmpDataStorage.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EmployeeDataStorage.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     public void edit(String ID,String n)
@@ -54,7 +54,7 @@ public class PermDataStorage {
            
             st.executeUpdate();
         } catch (SQLException ex) {
-            Logger.getLogger(EmpDataStorage.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EmployeeDataStorage.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     public ArrayList<Permission> load()
@@ -73,7 +73,7 @@ public class PermDataStorage {
             }
            
         } catch (SQLException ex) {
-            Logger.getLogger(EmpDataStorage.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EmployeeDataStorage.class.getName()).log(Level.SEVERE, null, ex);
         }
        return list;
     }

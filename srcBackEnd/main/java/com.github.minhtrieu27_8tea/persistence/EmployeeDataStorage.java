@@ -19,7 +19,7 @@ import jdbc.Employee;
  *
  * @author MINH TUAN
  */
-public class EmpDataStorage {
+public class EmployeeDataStorage {
     JDBCConnection conn = new JDBCConnection();
     public void create(Employee e)
     {
@@ -40,7 +40,7 @@ public class EmpDataStorage {
             st.setInt(8,e.getStatus());
             st.executeUpdate();
         } catch (SQLException ex) {
-            Logger.getLogger(EmpDataStorage.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EmployeeDataStorage.class.getName()).log(Level.SEVERE, null, ex);
         }
             
                 
@@ -53,7 +53,7 @@ public class EmpDataStorage {
             st.setString(1, ID);
             st.executeUpdate();
         } catch (SQLException ex) {
-            Logger.getLogger(EmpDataStorage.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EmployeeDataStorage.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     public void edit(String ID,Employee e)
@@ -72,7 +72,7 @@ public class EmpDataStorage {
             st.setString(8, ID);
             st.executeUpdate();
         } catch (SQLException ex) {
-            Logger.getLogger(EmpDataStorage.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EmployeeDataStorage.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     public Employee findByID(String ID)
@@ -96,7 +96,7 @@ public class EmpDataStorage {
             }
            
         } catch (SQLException ex) {
-            Logger.getLogger(EmpDataStorage.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EmployeeDataStorage.class.getName()).log(Level.SEVERE, null, ex);
         }
        return e;
     }
@@ -122,7 +122,7 @@ public class EmpDataStorage {
             }
            
         } catch (SQLException ex) {
-            Logger.getLogger(EmpDataStorage.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EmployeeDataStorage.class.getName()).log(Level.SEVERE, null, ex);
         }
        return list;
     }
@@ -136,6 +136,6 @@ public class EmpDataStorage {
         e.setDOB("12-12-2000");
         e.setPassword("md5pass");
         e.setStatus(0);
-        new EmpDataStorage().create(e);
+        new EmployeeDataStorage().create(e);
     }
 }

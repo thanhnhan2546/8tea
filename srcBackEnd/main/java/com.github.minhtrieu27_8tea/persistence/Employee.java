@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package jdbc;
 
 import java.util.Date;
@@ -52,6 +47,7 @@ public Employee(){
 
     public void setStatus(Integer Status) {
         this.Status = Status;
+        return this;
     }
 
     public String getIDEmployee() {
@@ -60,6 +56,7 @@ public Employee(){
 
     public void setIDEmployee(String IDEmployee) {
         this.IDEmployee = IDEmployee;
+        return this;
     }
 
     public String getIDPosition() {
@@ -68,6 +65,7 @@ public Employee(){
 
     public void setIDPosition(String IDPosition) {
         this.IDPosition = IDPosition;
+        return this;
     }
 
     public String getName() {
@@ -76,6 +74,7 @@ public Employee(){
 
     public void setName(String Name) {
         this.Name = Name;
+        return this;
     }
 
     public Integer getGender() {
@@ -84,6 +83,7 @@ public Employee(){
 
     public void setGender(Integer Gender) {
         this.Gender = Gender;
+        return this;
     }
 
     public String getPhone() {
@@ -92,6 +92,7 @@ public Employee(){
 
     public void setPhone(String Phone) {
         this.Phone = Phone;
+        return this;
     }
 
     public String getDOB() {
@@ -100,6 +101,7 @@ public Employee(){
 
     public void setDOB(String DOB) {
         this.DOB = DOB;
+        return this;
     }
 
     public String getPassword() {
@@ -108,6 +110,7 @@ public Employee(){
 
     public void setPassword(String Password) {
         this.Password = Password;
+        return this;
     }
 
     public List<Permission> getList() {
@@ -116,6 +119,7 @@ public Employee(){
 
     public void setList(List<Permission> list) {
         this.list = list;
+        return this;
     }
     
 

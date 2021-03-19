@@ -1,0 +1,17 @@
+1.Import Database vào Mysql XAMPP
+2.Chỉnh sửa đường dẫn tên db, username, password trong class JDBCConnection
+-----------------------------
+Các hàm trong Data Storage
+Employee_DataStorage
+create()
+edit()
+delete()
+load()
+findByID()
+
+Employee_DataStorage
+create()
+edit()
+delete()
+-----------------------------
+3.Chỉnh sửa khóa ngoại hoặc thêm dữ liệu vào bảng trước khi test

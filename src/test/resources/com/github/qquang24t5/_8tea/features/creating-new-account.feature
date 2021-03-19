@@ -1,52 +1,33 @@
-Feature: Creating new account for new employee
-  Check the information provided by the new employee and create new account for him/her
+# language: vi
+Tính năng: Tạo tài khoản mới
+  Kiểm tra thông tin và tạo tài khoản cho người dùng mới
 
-  Background:
-    the current user has the appropriate permission to create new account
+  Bối cảnh:
+    người dùng hiện tại có đủ quyền để tạo tạo khoản mới
 
-  Scenario: creating new account successfully
-    Given the account with the phone number "0777888999" doesn't exist in the system
-      And the account with the email "tony_stark@gmail.com" doesn't exist in the system
-    When user uses "0777888999" as the phone number for the new account
-      And user uses "tony_stark@gmail.com" as the email for the new account
-      And user uses "111!StrongPassword!999"
-      And user creates new account
-    Then user is notified that the new account is created successfully
+  Kịch bản: tạo tài khoản mới thành công
+    Biết tài khoản với số điện thoại "0777888999" không tồn tại trong hệ thống
+    Khi người dùng tạo tài khoản mới với số điện thoại "0777888999", mật khẩu "111!StrongPassword!999"
+    Thì người dùng được thông báo rằng tạo tài khoản mới thành công
 
-  Scenario Outline: creating new account using malformed or already existent phone number
-    Given the account with the phone number "0123456789" already exists in the system
-    When user uses "<phoneNumber>" as phone number
-      And user creates new account
-    Then user is notified that <result>
+  Khung kịch bản: tạo tài khoản mới bằng số điện thoại không hợp lệ hoặc đã tồn tại trong hệ thống
+    Biết tài khoản với số điện thoại "0123456789" đã tồn tại trong hệ thống
+    Khi người dùng tạo tài khoản mới với số điện thoại "<phoneNumber>"
+    Thì người dùng được thông báo rằng <result>
 
-  Examples:
-    | phoneNumber            | result                                   |
-    |                        | phone number cannot be left blank        |
-    | nguyen_van_a@gmail.com | phone number can only contains number    |
-    | 0123456789             | the given phone number is already exists |
+  Dữ liệu:
+    | phoneNumber     | result                                  |
+    |                 | số điện thoại không được để trống       |
+    | Đại học Sài Gòn | số điện thoại chỉ có thể chứa số        |
+    | 0123456789      | số điện thoại đã tồn tại trong hệ thống |
 
-  Scenario Outline: creating new account using malformed or already existent email
-    Given the account with the email "nguyen_van_a@gmail.com" already exists in the system
-    When user uses "<email>" as email
-      And user creates new account
-    Then user is notified that <result>
+  Khung kịch bản: tạo tài khoản mới với mật khẩu yếu
+    Khi người dùng tạo tài khoản mới với mật khẩu "<password>"
+    Thì người dùng được thông báo rằng <result>
 
-  Examples:
-    | email                  | result                                            |
-    |                        | email cannot be left blank                        |
-    | 0123456789             | email has to be in the form "my_name@example.com" |
-    | nguyen_van_a@gmail.com | the given email is already exists                 |
-
-  Scenario Outline: creating new account using weak password
-    When user uses "0777888999" as phone number
-      And user uses "tony_stark@gmail.com" as email
-      And user uses "<password>"
-      And user creates new account
-    Then user is notified that <result>
-
-  Examples:
-    | password   | result                                           |
-    | 0123       | password is too short (min. 8 characters)        |
-    | 01234567a! | password doesn't contain any lowercase character |
-    | 01234567A! | password doesn't contain any uppercase character |
-    | 01234567Aa | password doesn't contain any special character   |
+  Dữ liệu:
+    | password   | result                                        |
+    | 0123       | mật khẩu quá ngắn (8 ký tự tối thiểu)          |
+    | 01234567a! | mật khẩu phải chứa ít nhất 1 ký tự hoa        |
+    | 01234567A! | mật khẩu phải chứa ít nhất 1 ký tự thường     |
+    | 01234567Aa | mật khẩu phải chứa ít nhất một ký tự đặc biệt |

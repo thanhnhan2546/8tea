@@ -1,5 +1,6 @@
 package com.github.qquang24t5._8tea;
 
+import com.github.qquang24t5._8tea.persistence.EmployeeDatastore;
 import com.github.qquang24t5._8tea.transference.Employee;
 import com.github.qquang24t5._8tea.persistence.Database;
 import javafx.application.Application;
@@ -21,7 +22,7 @@ public class EightTeaApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
+        scene = new Scene(loadFXML("main"), 640, 480);
         stage.setScene(scene);
         stage.show();
     }
@@ -36,6 +37,14 @@ public class EightTeaApplication extends Application {
     }
 
     public static void main(String[] args) {
+
+        EmployeeDatastore.getInstance().create(new Employee()
+                .setMobile("0123456789")
+                .setPassword("0123456789"));
+
+        Employee e = EmployeeDatastore.getInstance().findByPhoneNumber("0123456789");
+
+        System.out.println(e);
 
         launch();
 

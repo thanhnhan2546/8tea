@@ -30,6 +30,7 @@
 
         <!-- List of Entity classes -->
         <mapping class = "com.github.qquang24t5._8tea.transference.Employee"/>
+        <mapping class = "com.github.qquang24t5._8tea.transference.Permission"/>
 
     </session-factory>
 </hibernate-configuration>

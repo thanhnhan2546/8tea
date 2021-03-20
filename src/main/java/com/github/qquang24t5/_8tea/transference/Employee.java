@@ -32,8 +32,8 @@ public class Employee {
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "Employee_Permission",
-            joinColumns = { @JoinColumn(name = "Employee.id") },
-            inverseJoinColumns = { @JoinColumn(name = "Permission.id") }
+            joinColumns = { @JoinColumn(name = "EmployeeId") },
+            inverseJoinColumns = { @JoinColumn(name = "PermissionId") }
     )
     private List<Permission> permissions;
 

@@ -4,6 +4,7 @@ import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 public class Employee {
@@ -28,6 +29,14 @@ public class Employee {
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "Employee_Permission",
+            joinColumns = { @JoinColumn(name = "Employee.id") },
+            inverseJoinColumns = { @JoinColumn(name = "Permission.id") }
+    )
+    private List<Permission> permissions;
+
     public Employee() {
         id = null;
         mobile = null;
@@ -35,6 +44,7 @@ public class Employee {
         name = null;
         dateOfBirth = null;
         gender = null;
+        permissions = null;
     }
 
     public Integer getId() {
@@ -88,6 +98,15 @@ public class Employee {
 
     public Employee setGender(Gender gender) {
         this.gender = gender;
+        return this;
+    }
+
+    public List<Permission> getPermissions() {
+        return permissions;
+    }
+
+    public Employee setPermissions(List<Permission> permissions) {
+        this.permissions = permissions;
         return this;
     }
 

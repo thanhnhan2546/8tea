@@ -1,5 +1,6 @@
-package com.github.qquang24t5._8tea.models;
+package com.github.qquang24t5._8tea.persistence;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -18,8 +19,8 @@ public class Database {
         return instance;
     }
 
-    public SessionFactory getSessionFactory() {
-        return instance.sessionFactory;
+    public Session openSession() {
+        return sessionFactory.openSession();
     }
 
 }

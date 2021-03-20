@@ -22,7 +22,7 @@ public class EightTeaApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("main"), 640, 480);
+        scene = new Scene(loadFXML("presentation/views/Default"), 640, 480);
         stage.setScene(scene);
         stage.show();
     }
@@ -37,14 +37,6 @@ public class EightTeaApplication extends Application {
     }
 
     public static void main(String[] args) {
-
-        EmployeeDatastore.getInstance().create(new Employee()
-                .setMobile("0123456789")
-                .setPassword("0123456789"));
-
-        Employee e = EmployeeDatastore.getInstance().findByPhoneNumber("0123456789");
-
-        System.out.println(e);
 
         launch();
 

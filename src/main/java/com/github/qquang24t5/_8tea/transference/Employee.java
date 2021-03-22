@@ -41,6 +41,7 @@ public class Employee {
             joinColumns = { @JoinColumn(name = "EmployeeId") },
             inverseJoinColumns = { @JoinColumn(name = "PermissionId") }
     )
+    @ToString.Exclude
     private List<Permission> permissions;
 
 }

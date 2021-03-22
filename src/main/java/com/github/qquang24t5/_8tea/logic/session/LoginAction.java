@@ -1,5 +1,11 @@
 package com.github.qquang24t5._8tea.logic.session;
 
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
 public class LoginAction {
 
     public enum Error {
@@ -11,26 +17,6 @@ public class LoginAction {
         private Error(String message) {
             this.message = message;
         }
-    }
-
-    public LoginAction() {}
-
-    public String getMobile() {
-        return mobile;
-    }
-
-    public LoginAction setMobile(String mobile) {
-        this.mobile = mobile;
-        return this;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public LoginAction setPassword(String password) {
-        this.password = password;
-        return this;
     }
 
     private String mobile;

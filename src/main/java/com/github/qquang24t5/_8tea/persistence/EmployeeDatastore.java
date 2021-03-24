@@ -10,7 +10,7 @@ import java.util.List;
 public class EmployeeDatastore {
 
     private static EmployeeDatastore instance;
-    private Database database;
+    private final Database database;
 
     private EmployeeDatastore() {
         database = Database.getInstance();

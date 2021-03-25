@@ -18,7 +18,7 @@ public class Permission {
 
     private String name;
 
-    @ManyToMany(mappedBy = "permissions", fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "permissions", fetch = FetchType.EAGER)
     @ToString.Exclude
     private List<Position> positions;
 

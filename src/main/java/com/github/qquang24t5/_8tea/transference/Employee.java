@@ -25,7 +25,7 @@ public class Employee {
     @Column(unique = true, nullable = false)
     private String passwordHash;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     private Position position;
 
     private String name;

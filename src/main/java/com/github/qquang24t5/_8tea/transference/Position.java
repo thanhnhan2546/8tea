@@ -11,16 +11,25 @@ import java.util.List;
 @Entity
 @Data
 @Builder
-public class Permission {
+public class Position {
     @Id
+    @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String name;
 
-    @ManyToMany(mappedBy = "permissions", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "position")
     @ToString.Exclude
-    private List<Position> positions;
+    private List<Employee> employees;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "Permission_Position",
+            joinColumns = {@JoinColumn(name = "position")},
+            inverseJoinColumns = {@JoinColumn(name = "permission")})
+    @ToString.Exclude
+    private List<Permission> permissions;
 
     @NotNull
     private Boolean disabled;

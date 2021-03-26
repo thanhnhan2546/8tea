@@ -10,7 +10,7 @@ public class EmployeeStepDefinitions {
     private EmployeeRepo employeeRepo;
 
     public EmployeeStepDefinitions() {
-        employeeRepo = EmployeeRepo.getInstance();
+        employeeRepo = new EmployeeRepo();
     }
 
     @Biết("tài khoản với số điện thoại {string} đã tồn tại trong hệ thống")

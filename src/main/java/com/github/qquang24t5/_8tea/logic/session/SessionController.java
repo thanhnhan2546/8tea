@@ -1,7 +1,7 @@
 package com.github.qquang24t5._8tea.logic.session;
 
 import com.github.qquang24t5._8tea.helpers.Hasher;
-import com.github.qquang24t5._8tea.persistence.EmployeeDatastore;
+import com.github.qquang24t5._8tea.persistence.EmployeeRepo;
 import com.github.qquang24t5._8tea.transference.Employee;
 
 import java.security.NoSuchAlgorithmException;
@@ -51,7 +51,7 @@ public class SessionController {
     }
 
     private static SessionController instance;
-    private EmployeeDatastore employeeDs;
+    private EmployeeRepo employeeDs;
     private Employee currentEmployee;
 
 }

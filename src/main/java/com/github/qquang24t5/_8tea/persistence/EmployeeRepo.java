@@ -1,11 +1,11 @@
 package com.github.qquang24t5._8tea.persistence;
 
 import com.github.qquang24t5._8tea.transference.Employee;
-import io.cucumber.java.eo.Se;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import java.util.List;
 
 public class EmployeeRepo extends Repo {
@@ -20,7 +20,7 @@ public class EmployeeRepo extends Repo {
     public List<Employee> readAll() {
         Session session = database.openSession();
         Transaction transaction = session.beginTransaction();
-        Query query = session.createQuery("SELECT FROM Employee", Employee.class);
+        TypedQuery<Employee> query = session.createQuery("SELECT FROM Employee", Employee.class);
         List<Employee> employees = query.getResultList();
         transaction.commit();
         session.close();
@@ -34,7 +34,7 @@ public class EmployeeRepo extends Repo {
     public Employee readById(int id) {
         Session session = database.openSession();
         Transaction transaction = session.beginTransaction();
-        Query query = session.createQuery("FROM Employee WHERE id =: id", Employee.class);
+        TypedQuery<Employee> query = session.createQuery("FROM Employee WHERE id =: id", Employee.class);
         query.setParameter("id", id);
         List<Employee> employees = query.getResultList();
         transaction.commit();

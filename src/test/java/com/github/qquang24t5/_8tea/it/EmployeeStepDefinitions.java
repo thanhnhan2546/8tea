@@ -1,9 +1,11 @@
 package com.github.qquang24t5._8tea.it;
 
 import com.github.qquang24t5._8tea.persistence.EmployeeRepo;
+import com.github.qquang24t5._8tea.transference.Employee;
 import io.cucumber.java.vi.Biết;
 import io.cucumber.java.vi.Khi;
 import io.cucumber.java.vi.Thì;
+import io.cucumber.java.vi.Và;
 
 public class EmployeeStepDefinitions {
 
@@ -14,13 +16,15 @@ public class EmployeeStepDefinitions {
     }
 
     @Biết("tài khoản với số điện thoại {string} đã tồn tại trong hệ thống")
-    public void tài_khoản_với_số_điện_thoại_đã_tồn_tại_trong_hệ_thống(String string) {
-        throw new UnsupportedOperationException();
+    public boolean tài_khoản_với_số_điện_thoại_đã_tồn_tại_trong_hệ_thống(String employeePhone) {
+        return employeeRepo.findByPhoneNumber(employeePhone) != null;
+        //throw new UnsupportedOperationException();
     }
 
     @Biết("tài khoản với số điện thoại {string} không tồn tại trong hệ thống")
-    public void tài_khoản_với_số_điện_thoại_không_tồn_tại_trong_hệ_thống(String string) {
-        throw new UnsupportedOperationException();
+    public boolean tài_khoản_với_số_điện_thoại_không_tồn_tại_trong_hệ_thống(String employeePhone) {
+       return employeeRepo.findByPhoneNumber(employeePhone) == null;
+        //throw new UnsupportedOperationException();
     }
 
     @Khi("người dùng tạo tài khoản mới với mật khẩu {string}")
@@ -48,4 +52,12 @@ public class EmployeeStepDefinitions {
         throw new UnsupportedOperationException();
     }
 
+    @Và("tồn tại tài khoản với số điện thoại {string} với mật khẩu {string}")
+    public boolean isPhoneNumberExist(String arg0, String arg1) {
+        Employee isExist = employeeRepo.findByPhoneNumber(arg0);
+        if (isExist != null) {
+            return arg1.equals(isExist.getPasswordHash());
+        }
+        return false;
+    }
 }

@@ -27,7 +27,7 @@ Tính năng: Tạo tài khoản mới
 
   Dữ liệu:
     | password   | result                                        |
-    | 0123       | mật khẩu quá ngắn (8 ký tự tối thiểu)          |
+    | 0123       | mật khẩu quá ngắn (8 ký tự tối thiểu)         |
     | 01234567a! | mật khẩu phải chứa ít nhất 1 ký tự hoa        |
     | 01234567A! | mật khẩu phải chứa ít nhất 1 ký tự thường     |
     | 01234567Aa | mật khẩu phải chứa ít nhất một ký tự đặc biệt |
